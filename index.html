@@ -23,12 +23,12 @@
         <p>This is my first webpage!</p>
       </section>
 
-      <section id="about">
+      <section id="about" style="display:none;">
         <h2>About</h2>
         <p>Best acting driver service started in the year 2026.</p>
       </section>
 
-      <section id="contact">
+      <section id="contact" style="display:none;">
         <h2>Contact</h2>
         <p>Email: candb.driver@gmail.com</p>
       </section>
@@ -37,6 +37,18 @@
     <footer>
       <p>&copy; 2026 My Website</p>
     </footer>
+
+    <script>
+      function showSection(id) {
+        // Hide all sections
+        document.querySelectorAll('section').forEach(function(sec) {
+          sec.style.display = 'none';
+        });
+
+        // Show only the clicked section
+        document.getElementById(id).style.display = 'block';
+      }
+    </script>
 
   </body>
 </html>
