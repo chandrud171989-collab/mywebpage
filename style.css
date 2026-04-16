@@ -132,3 +132,27 @@ footer {
 .job-form {
   margin-top: 30px;
 }
+.hero {
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
