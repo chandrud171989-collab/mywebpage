@@ -1,23 +1,25 @@
-<script>
-  function showSection(id) {
-    document.querySelectorAll('section').forEach(function(sec) {
-      sec.style.display = 'none';
-    });
-    document.getElementById(id).style.display = 'block';
+function showSection(id) {
+  document.querySelectorAll('section').forEach(function(sec) {
+    sec.style.display = 'none';
+  });
 
-    // Reset job forms when entering career
-    if (id === 'career') {
-      document.querySelectorAll('.job-form').forEach(function(form) {
-        form.style.display = 'none';
-      });
-    }
-  }
+  document.getElementById(id).style.display = 'block';
 
-  function openJob(role) {
+  // Reset job forms when opening career
+  if (id === 'career') {
     document.querySelectorAll('.job-form').forEach(function(form) {
       form.style.display = 'none';
     });
-
-    document.getElementById(role).style.display = 'block';
   }
-</script>
+}
+
+function openJob(role) {
+  document.querySelectorAll('.job-form').forEach(function(form) {
+    form.style.display = 'none';
+  });
+
+  var selected = document.getElementById(role);
+  if (selected) {
+    selected.style.display = 'block';
+  }
+}
