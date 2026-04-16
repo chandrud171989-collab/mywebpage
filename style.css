@@ -65,30 +65,41 @@ section {
 .book-container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  align-items: center;
+  height: 60vh; /* pushes it to middle */
 }
 
 .blink-btn {
-  background-color: #e74c3c;
+  background-color: red;
   color: white;
-  padding: 18px 40px;
-  font-size: 20px;
+  padding: 20px 50px;
+  font-size: 24px;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
-  animation: blink 1s step-start infinite;
+  animation: blinkColors 1s infinite;
 }
 
-.blink-btn:hover {
-  background-color: #c0392b;
-  animation: none;
-}
-
-/* ── BLINK ANIMATION ── */
-@keyframes blink {
-  0%   { opacity: 1; }
-  50%  { opacity: 0; }
-  100% { opacity: 1; }
+/* MULTI-COLOR BLINK */
+@keyframes blinkColors {
+  0% {
+    background-color: red;
+    opacity: 1;
+  }
+  25% {
+    background-color: blue;
+  }
+  50% {
+    background-color: green;
+    opacity: 0.3;
+  }
+  75% {
+    background-color: orange;
+  }
+  100% {
+    background-color: purple;
+    opacity: 1;
+  }
 }
 
 /* ── FOOTER ── */
