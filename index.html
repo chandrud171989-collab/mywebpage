@@ -11,11 +11,14 @@
     <header>
       <h1>Best Acting Drivers</h1>
       <nav>
-        <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('about')">About</a>
-        <a href="#" onclick="showSection('contact')">Contact</a>
-        <a href="#" onclick="showSection('booking')">Book a Driver</a>
-        <a href="#" onclick="showSection('career')">Career</a>
+        <div class="nav-left">
+          <a href="#" onclick="showSection('home')">Home</a>
+          <a href="#" onclick="showSection('about')">About</a>
+          <a href="#" onclick="showSection('contact')">Contact</a>
+        </div>
+        <div class="nav-right">
+          <a href="#" onclick="showSection('career')">Careers</a>
+        </div>
       </nav>
     </header>
 
@@ -23,6 +26,13 @@
       <section id="home">
         <h2>Welcome to Best Acting Drivers</h2>
         <p>This is my first webpage!</p>
+
+        <!-- BLINKING BOOK A DRIVER BUTTON IN MIDDLE -->
+        <div class="book-container">
+          <a href="#" class="blink-btn" onclick="showSection('booking')">
+            Book a Driver
+          </a>
+        </div>
       </section>
 
       <section id="about" style="display:none;">
@@ -50,7 +60,7 @@
         </iframe>
       </section>
 
-      <left><section id="career" style="display:none;">
+      <section id="career" style="display:none;">
         <h2>Do you like to work with us?</h2>
         <p>Fill the form below to start your career!</p>
         <iframe 
@@ -61,11 +71,11 @@
           marginheight="0" 
           marginwidth="0">
           Loading form...
-        </iframe>   
+        </iframe>
       </section>
-      </left>
 
     </main>
+
     <footer>
       <p>&copy; 2026 All rights reserved</p>
     </footer>

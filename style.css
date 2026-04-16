@@ -1,7 +1,7 @@
-/* style.css */
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,31 +9,91 @@ body {
   color: #333;
 }
 
+/* ── HEADER ── */
 header {
-  background-color: #98c1f0;
-  color: rgb(221, 130, 130);
+  background-color: #4a90e2;
+  color: white;
   padding: 20px;
   text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+}
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right {
+  margin-left: auto;
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
+nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ── MAIN SECTIONS ── */
 main {
   padding: 40px;
 }
 
+section {
+  min-height: 200px;
+}
+
+/* ── BLINKING BOOK A DRIVER BUTTON ── */
+.book-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.blink-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 18px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  animation: blink 1s step-start infinite;
+}
+
+.blink-btn:hover {
+  background-color: #c0392b;
+  animation: none;
+}
+
+/* ── BLINK ANIMATION ── */
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ── FOOTER ── */
 footer {
   text-align: center;
   padding: 20px;
   background: #ddd;
-}
-@media (max-width: 600px) {
-  nav a {
-    display: block;
-    margin: 5px 0;
-  }
 }
