@@ -14,6 +14,8 @@
         <a href="#" onclick="showSection('home')">Home</a>
         <a href="#" onclick="showSection('about')">About</a>
         <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('booking')">Book a Driver</a>
+        <a href="#" onclick="showSection('career')">Career</a>
       </nav>
     </header>
 
@@ -31,47 +33,51 @@
       <section id="contact" style="display:none;">
         <h2>Contact</h2>
         <p>Email: candb.driver@gmail.com</p>
-        <p>Contcat number : 6385393049</p>
+        <p>Contact number: 6385393049</p>
       </section>
+
       <section id="booking" style="display:none;">
-          <h2>Book a Driver</h2>
-          <p>Fill the form below to book our service!</p>
-          <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSf7PKaOJlQGLuNNJN70Kkj2Gre1pkR5pHs290smRG8u6AfNqQ/viewform?embedded=true" 
-            width="640" 
-            height="2879" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-            Loading form…
-          </iframe>
+        <h2>Book a Driver</h2>
+        <p>Fill the form below to book our service!</p>
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf7PKaOJlQGLuNNJN70Kkj2Gre1pkR5pHs290smRG8u6AfNqQ/viewform?embedded=true" 
+          width="100%" 
+          height="600" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Loading form...
+        </iframe>
       </section>
-      <section id="booking" style="display:none;">
-          <h2>Do you like to work wuh us?</h2>
-          <p>Fill the form below to start your career!</p>
-          <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSf7PKaOJlQGLuNNJN70Kkj2Gre1pkR5pHs290smRG8u6AfNqQ/viewform?embedded=true"
-            width="640" 
-            height="2879" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-            Loading form…
-          </iframe>
+
+      <section id="career" style="display:none;">
+        <h2>Do you like to work with us?</h2>
+        <p>Fill the form below to start your career!</p>
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf7PKaOJlQGLuNNJN70Kkj2Gre1pkR5pHs290smRG8u6AfNqQ/viewform?embedded=true"
+          width="100%" 
+          height="600" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0">
+          Loading form...
+        </iframe>
+      </section>
+
     </main>
+
     <footer>
       <p>&copy; 2026 All rights reserved</p>
     </footer>
+
     <script>
       function showSection(id) {
-        // Hide all sections
         document.querySelectorAll('section').forEach(function(sec) {
           sec.style.display = 'none';
         });
-
-        // Show only the clicked section
         document.getElementById(id).style.display = 'block';
       }
     </script>
+
   </body>
 </html>
