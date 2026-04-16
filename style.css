@@ -108,3 +108,27 @@ footer {
   padding: 20px;
   background: #ddd;
 }
+.job-list {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.job-list button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.job-list button:hover {
+  background-color: #357abd;
+}
+
+.job-form {
+  margin-top: 30px;
+}
