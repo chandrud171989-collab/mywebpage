@@ -148,29 +148,38 @@
   </section>
 
   <!-- CAREER -->
-  <section id="career" style="display:none;">
-    <div class="section-content">
-      <h2>Join Our Team</h2>
-      <p>Do you want to work with us? Select a role below:</p>
-      <div class="job-list">
-        <button class="job-btn" onclick="openJob('driver')">🚗 Driver</button>
+<section id="career" style="display:none;">
+  <div class="section-content">
+
+    <h2>Join Our Team</h2>
+    <p>Select a role below:</p>
+
+    <div class="job-list">
+      <button class="job-btn" onclick="openJob('driver')">🚗 Driver</button>
+      <button class="job-btn" onclick="openJob('office')">🏢 Office Staff</button>
+    </div>
+
+    <!-- DRIVER -->
+    <div id="driver" class="job-form" style="display:none;">
+      <h3>Driver Application Form</h3>
+      <div class="form-wrapper">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdsbzyR3O4we7SeG4Cn7UCem2m7r_SgButILRvGQXy4AG9CaA/viewform?embedded=true"
+          width="100%" 
+          height="700">
+        </iframe>
       </div>
-      <div id="driver" class="job-form" style="display:none;">
-        <h3>Driver Application Form</h3>
-        <div class="form-wrapper">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdsbzyR3O4we7SeG4Cn7UCem2m7r_SgButILRvGQXy4AG9CaA/viewform?embedded=true"
-            width="100%"
-            height="700"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Loading form...
-          </iframe>
-          <div class="job-list">
-        <button class="job-btn" onclick="openJob('Office Staff')"> Office Staff</button>
+    </div>
+
+    <!-- OFFICE -->
+    <div id="office" class="job-form" style="display:none;">
+      <h3>Office Staff Application Form</h3>
+      <div class="form-wrapper">
+        <iframe src="" width="100%" height="700"></iframe>
       </div>
-  </section>
+    </div>
+  </div>
+</section>
 
 </main>
 
