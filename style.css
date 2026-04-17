@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   background-color: #f5f5f5;
   color: #333;
@@ -11,7 +11,7 @@ body {
 
 /* ── HEADER ── */
 header {
-  background-color: #4a90e2;
+  background: linear-gradient(90deg, #4a90e2, #357abd);
   color: white;
   padding: 20px;
   text-align: center;
@@ -19,11 +19,6 @@ header {
   top: 0;
 }
 
-header h1 {
-  margin: 0 0 10px 0;
-}
-
-/* ── NAV ── */
 nav {
   display: flex;
   justify-content: space-between;
@@ -52,23 +47,99 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* ── MAIN SECTIONS ── */
+/* ── MAIN ── */
 main {
   padding: 40px;
 }
 
-section {
-  min-height: 200px;
-}
-
-/* ── BLINKING BOOK A DRIVER BUTTON ── */
-.book-container {
+/* ── HERO SECTION ── */
+.hero {
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh; /* pushes it to middle */
+  text-align: center;
+  color: white;
 }
 
+/* Background */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+  filter: brightness(0.6);
+  z-index: -1;
+}
+
+/* Glass card */
+.hero-content {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  max-width: 700px;
+  animation: fadeUp 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PREMIUM TEXT */
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  background: linear-gradient(45deg, #ffffff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 8px 25px rgba(0,0,0,0.8);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.hero h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Subtitle */
+.hero p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #f5f5f5;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.7);
+}
+
+/* BUTTON */
 .blink-btn {
   margin-top: 25px;
   background: linear-gradient(45deg, #ff512f, #dd2476);
@@ -79,7 +150,6 @@ section {
   border-radius: 50px;
   text-decoration: none;
   display: inline-block;
-
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
@@ -89,18 +159,21 @@ section {
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* Hover animation */
-.blink-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+/* CAR ANIMATION */
+.car {
+  position: absolute;
+  bottom: 20px;
+  left: -200px;
+  width: 200px;
+  animation: drive 8s linear infinite;
 }
 
-/* ── FOOTER ── */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #ddd;
+@keyframes drive {
+  0% { left: -200px; }
+  100% { left: 110%; }
 }
+
+/* JOB SECTION */
 .job-list {
   display: flex;
   gap: 15px;
@@ -125,47 +198,16 @@ footer {
 .job-form {
   margin-top: 30px;
 }
-.hero {
-  height: 90vh;
-  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+/* FOOTER */
+footer {
   text-align: center;
-  color: white;
+  padding: 20px;
+  background: #ddd;
 }
 
-.hero-content {
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 800px;
-}
-
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #ffffff;
-}
-
-.hero p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  color: #f1f1f1;
-}
-/* 📱 MOBILE RESPONSIVE */
-@media (max-width: 768px) 
-{
-
-  header h1 {
-    font-size: 20px;
-  }
+/* 📱 MOBILE */
+@media (max-width: 768px) {
 
   nav {
     flex-direction: column;
@@ -177,131 +219,34 @@ footer {
     align-items: center;
   }
 
-  .nav-right {
-    margin: 0;
-  }
-
   main {
     padding: 20px;
   }
 
-  /* HERO SECTION */
-.hero {
-  height: 90vh;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-
-/* Background image layer */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
-  filter: brightness(0.6);
-  z-index: -1;
-}
-
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 52px;
-  font-weight: 600;
-  letter-spacing: 2px;
-
-  background: linear-gradient(45deg, #ffffff, #ffd700);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0 8px 25px rgba(0,0,0,0.8);
-}
-.hero h2::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  100% {
-    left: 100%;
-  }
-}
+  .hero {
+    height: auto;
+    padding: 40px 20px;
   }
 
-.hero p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  color: #f5f5f5;
+  .hero h2 {
+    font-size: 28px;
+  }
 
-  text-shadow: 0 3px 15px rgba(0,0,0,0.7);
-}
-  /* BUTTON */
+  .hero p {
+    font-size: 14px;
+  }
+
   .blink-btn {
     font-size: 16px;
     padding: 12px 25px;
   }
 
-  /* JOB BUTTONS */
   .job-list {
     flex-direction: column;
     align-items: center;
   }
 
-  .job-list button {
-    width: 100%;
-    max-width: 250px;
-  }
-
-  /* IFRAME FIX */
   iframe {
     height: 500px;
-  }
-img {
-  max-width: 100%;
-  height: auto;
-}
-.hero-content {
-  background: rgba(0, 0, 0, 0.35);
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(6px);
-  max-width: 700px;
-  animation: float 3s ease-in-out infinite;
-}
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-nav a {
-  display: block;
-  text-align: center;
-}
-.car {
-  position: absolute;
-  bottom: 20px;
-  left: -200px;
-  width: 200px;
-  animation: drive 8s linear infinite;
-}
-
-@keyframes drive {
-  0% {
-    left: -200px;
-  }
-  100% {
-    left: 110%;
   }
 }
