@@ -79,15 +79,49 @@ nav a:hover {
   position: absolute;
   bottom: 0;
   width: 200%;
-  height: 60px;
-  background: #222;
+  height: 80px;
+  background: #1a1a1a;
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  animation: roadMove 1s linear infinite;
+  overflow: hidden;
+
+  /* 3D perspective */
+  transform: perspective(400px) rotateX(25deg);
 }
+
+/* CENTER YELLOW DASH */
+.road::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 200%;
+  height: 6px;
+
+  transform: translateY(-50%);
+
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 40px,
+    #ffd700 40px,
+    #ffd700 80px
+  );
+
+  animation: roadMove 1s linear infinite;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+.road::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(to right, white 0 5px, transparent 5px calc(100% - 5px), white calc(100% - 5px) 100%);
+
+  opacity: 0.8;
+}
+
 
 .road-line {
   width: 80px;
@@ -101,8 +135,8 @@ nav a:hover {
 .road-line:nth-child(3) { animation-delay: -0.66s; }
 
 @keyframes roadMove {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from { transform: translateX(-50%) translateY(-50%); }
+  to   { transform: translateX(0) translateY(-50%); }
 }
 
 /* ── MOVING CAR ── */
