@@ -143,7 +143,6 @@ footer {
   width: 80%;
   max-width: 800px;
 }
-}
 
 .hero h2 {
   font-family: 'Playfair Display', serif;
@@ -254,5 +253,4 @@ img {
 nav a {
   display: block;
   text-align: center;
-}
 }
