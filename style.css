@@ -135,8 +135,8 @@ nav a:hover {
 .road-line:nth-child(3) { animation-delay: -0.66s; }
 
 @keyframes roadMove {
-  from { transform: translateX(-50%) translateY(-50%); }
-  to   { transform: translateX(0) translateY(-50%); }
+  from { transform: translateX(0) translateY(-50%); }
+  to   { transform: translateX(50%) translateY(-50%); }
 }
 
 /* ── MOVING CAR ── */
