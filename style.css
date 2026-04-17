@@ -5,17 +5,26 @@ html {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
 }
 
-/* HEADER */
+/* ───────── HEADER ───────── */
 header {
   background: linear-gradient(90deg, #4a90e2, #357abd);
   padding: 15px 20px;
+  color: white;
+}
+
+.header-top {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .nav-left {
@@ -27,9 +36,15 @@ nav a {
   color: white;
   text-decoration: none;
   font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-/* HERO */
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ───────── HERO SECTION ───────── */
 .hero {
   height: 90vh;
   position: relative;
@@ -39,85 +54,153 @@ nav a {
   overflow: hidden;
 }
 
-/* VIDEO */
+/* VIDEO BACKGROUND */
 .bg-video {
   position: absolute;
   top: 0;
-  left: 0;   /* IMPORTANT */
+  left: 0;       /* important */
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
 }
 
-/* OVERLAY */
+/* DARK OVERLAY */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.55);
   z-index: 1;
 }
 
-/* CONTENT */
+/* CONTENT BOX */
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.45);
   padding: 40px;
   border-radius: 20px;
+  backdrop-filter: blur(6px);
 }
 
-/* TEXT */
+/* HEADING */
 .hero h2 {
   font-family: 'Playfair Display', serif;
   font-size: 42px;
-  color: gold;
+  color: #ffd700;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.9);
 }
 
+/* SUBTEXT */
 .hero p {
-  color: white;
+  color: #ffffff;
   margin-top: 10px;
+  font-size: 16px;
 }
 
 /* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 20px;
-  background: #ff4d6d;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
   color: white;
   padding: 12px 30px;
   border-radius: 30px;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* SECTIONS */
+/* ───────── OTHER SECTIONS ───────── */
 main {
   padding: 40px;
 }
 
+.section-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.form-wrapper {
+  margin-top: 20px;
+}
+
+/* JOB LIST */
+.job-list {
+  margin-top: 20px;
+}
+
+.job-btn {
+  padding: 12px 20px;
+  border: none;
+  background: #4a90e2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.job-btn:hover {
+  background: #357abd;
+}
+
+.job-form {
+  margin-top: 20px;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background: #eee;
 }
 
-/* MOBILE */
+/* ───────── MOBILE RESPONSIVE ───────── */
 @media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero {
     height: auto;
     padding: 40px 20px;
   }
 
+  .hero-content {
+    padding: 25px;
+  }
+
   .hero h2 {
     font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  iframe {
+    height: 500px;
   }
 }
