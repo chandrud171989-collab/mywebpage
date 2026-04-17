@@ -18,6 +18,10 @@ header {
   box-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
 
+.logo img {
+  height: 40px;   /* adjust size */
+  object-fit: contain;
+}
 .header-top {
   text-align: center;
   margin-bottom: 10px;
