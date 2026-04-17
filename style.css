@@ -156,3 +156,76 @@ footer {
   font-size: 18px;
   margin: 10px 0 20px;
 }
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) 
+{
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-right {
+    margin: 0;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* BUTTON */
+  .blink-btn {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+
+  /* JOB BUTTONS */
+  .job-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-list button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  /* IFRAME FIX */
+  iframe {
+    height: 500px;
+  }
+img {
+  max-width: 100%;
+  height: auto;
+}
+.hero-content {
+  width: 90%;
+}
+nav a {
+  display: block;
+  text-align: center;
+}
+}
