@@ -52,6 +52,8 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600') center/cover no-repeat;
 }
 
 /* VIDEO BACKGROUND */
@@ -70,7 +72,7 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.6);
   z-index: 1;
 }
 .hero::before {
@@ -99,18 +101,17 @@ nav a:hover {
 .hero h2 {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
-  font-weight: 600;
 
   background: linear-gradient(90deg, #ffd700, #ffffff, #ffd700);
-  background-size: 200% auto;
+  background-size: 200%;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: shineText 4s linear infinite;
+  animation: shine 4s linear infinite;
 }
 
-@keyframes shineText {
+@keyframes shine {
   0% { background-position: 0% }
   100% { background-position: 200% }
 }
@@ -206,20 +207,17 @@ footer {
 
 .hero-content {
   position: relative;
-  z-index: 3;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
+  z-index: 2;
 
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
 
   padding: 50px;
-  border-radius: 25px;
+  border-radius: 20px;
+  max-width: 700px;
+  text-align: center;
 
-  border: 1px solid rgba(255,255,255,0.2);
-
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
 }
 
   .hero h2 {
@@ -231,22 +229,15 @@ footer {
   }
 
 .btn {
-  display: inline-block;
-  margin-top: 25px;
-
+  margin-top: 20px;
   background: linear-gradient(45deg, #ff416c, #ff4b2b);
-  color: white;
-
   padding: 14px 35px;
-  border-radius: 50px;
+  border-radius: 30px;
+  color: white;
   text-decoration: none;
 
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  box-shadow: 0 0 20px rgba(255,75,43,0.6);
-
-  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255,75,43,0.7);
+  transition: 0.3s;
 }
 
 .btn:hover {
