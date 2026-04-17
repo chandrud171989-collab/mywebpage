@@ -80,7 +80,7 @@ nav a:hover {
   bottom: 0;
   width: 200%;
   height: 80px;
-  background: #1a1a1a;
+  background: linear-gradient(to top, #111, #222);
   z-index: 2;
   overflow: hidden;
 
@@ -93,7 +93,7 @@ nav a:hover {
   content: "";
   position: absolute;
   top: 50%;
-  left: 0;
+  left: -50%;
   width: 200%;
   height: 6px;
 
@@ -107,8 +107,7 @@ nav a:hover {
     #ffd700 80px
   );
 
-  animation: roadMove 1s linear infinite;
-  box-shadow: 0 0 10px #ffd700;
+  animation: roadMove 1.2s linear infinite;
 }
 
 .road::after {
@@ -135,8 +134,12 @@ nav a:hover {
 .road-line:nth-child(3) { animation-delay: -0.66s; }
 
 @keyframes roadMove {
-  from { transform: translateX(0) translateY(-50%); }
-  to   { transform: translateX(50%) translateY(-50%); }
+  from {
+    transform: translateX(0) translateY(-50%);
+  }
+  to {
+    transform: translateX(50%) translateY(-50%);
+  }
 }
 
 /* ── MOVING CAR ── */
