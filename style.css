@@ -116,8 +116,8 @@ nav a:hover {
 }
 
 @keyframes carDrive {
-  0%   { left: -80px; }
-  100% { left: 110%; }
+  0%   { right: -80px; }
+  100% { right: 110%; }
 }
 
 /* ── HERO CONTENT ── */
