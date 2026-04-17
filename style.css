@@ -70,36 +70,22 @@ section {
 }
 
 .blink-btn {
-  background-color: red;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
   color: white;
-  padding: 20px 50px;
-  font-size: 24px;
+  padding: 16px 40px;
+  font-size: 20px;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 50px;
   text-decoration: none;
-  animation: blinkColors 1s infinite;
+  display: inline-block;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
-/* MULTI-COLOR BLINK */
-@keyframes blinkColors {
-  0% {
-    background-color: red;
-    opacity: 1;
-  }
-  25% {
-    background-color: blue;
-  }
-  50% {
-    background-color: green;
-    opacity: 0.3;
-  }
-  75% {
-    background-color: orange;
-  }
-  100% {
-    background-color: purple;
-    opacity: 1;
-  }
+/* Hover animation */
+.blink-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 /* ── FOOTER ── */
