@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 
@@ -30,9 +31,9 @@
 <!-- HERO -->
 <section id="home" class="hero">
 
-  <!-- ✅ VIDEO -->
+  <!-- VIDEO BACKGROUND -->
   <video autoplay muted loop playsinline class="bg-video">
-    <source src="https://cdn.coverr.co/videos/coverr-driving-a-car-while-sun-is-setting-5176/1080p.mp4" type="video/mp4">
+    <source src="https://cdn.coverr.co/videos/coverr-driving-on-the-road-5176/1080p.mp4" type="video/mp4">
   </video>
 
   <!-- CONTENT -->
@@ -40,7 +41,7 @@
     <h2>Welcome to Best Acting Drivers</h2>
     <p>Safe • Reliable • Professional Drivers at Your Door Step</p>
 
-    <a href="#" class="blink-btn" onclick="showSection('booking')">
+    <a href="#" class="btn" onclick="showSection('booking')">
       Book a Driver
     </a>
   </div>
@@ -57,7 +58,7 @@
 <section id="contact" style="display:none;">
   <h2>Contact</h2>
   <p>Email: candb.driver@gmail.com</p>
-  <p>Contact number: 6385393049</p>
+  <p>Contact: 6385393049</p>
 </section>
 
 <!-- BOOKING -->
@@ -84,17 +85,13 @@
 </main>
 
 <footer>
-  <p>&copy; 2026 All rights reserved</p>
+  <p>&copy; 2026 Best Acting Drivers</p>
 </footer>
 
 <script>
 function showSection(id) {
   document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
   document.getElementById(id).style.display = 'block';
-
-  if (id === 'career') {
-    document.querySelectorAll('.job-form').forEach(f => f.style.display = 'none');
-  }
 }
 
 function openJob(role) {
