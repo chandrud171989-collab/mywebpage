@@ -78,7 +78,7 @@ nav a:hover {
 .road {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 200%;
   height: 60px;
   background: #222;
   z-index: 2;
@@ -87,6 +87,7 @@ nav a:hover {
   justify-content: center;
   gap: 40px;
   overflow: hidden;
+  animation: roadMove 2s linear infinite;
 }
 
 .road-line {
@@ -101,8 +102,8 @@ nav a:hover {
 .road-line:nth-child(3) { animation-delay: -0.66s; }
 
 @keyframes roadMove {
-  from { transform: translateX(200px); }
-  to   { transform: translateX(-200px); }
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 
 /* ── MOVING CAR ── */
