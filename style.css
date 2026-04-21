@@ -25,9 +25,11 @@ header {
 /* ✅ LOGO */
 .logo-img {
   height: 90px;
+  max-width: 250px;
   object-fit: contain;
   display: block;
   margin: 0 auto 8px;
+  filter: drop-shadow(0 0 8px rgba(255,215,0,0.4));
 }
 
 .header-top h1 {
@@ -257,15 +259,16 @@ nav a:hover {
 .car-animation {
   position: absolute;
   bottom: 12px;
+  left: 0;
   font-size: 36px;
   z-index: 3;
-  animation: carDrive 4s linear infinite;
   filter: drop-shadow(0 0 10px rgba(255,215,0,0.8));
+  animation: carDrive 4s linear infinite;
 }
 
 @keyframes carDrive {
-  0%   { right: -80px; }
-  100% { right: 110%; }
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100vw); }
 }
 
 /* ── HERO CONTENT ── */
