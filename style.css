@@ -60,6 +60,57 @@ nav a:hover {
   color: #ffd700;
 }
 
+/* ───────── SCROLLING TICKER ───────── */
+.ticker-bar {
+  background: linear-gradient(90deg, #1a1a2e, #16213e);
+  color: #ffd700;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(255,215,0,0.3);
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.ticker-bar:hover {
+  background: linear-gradient(90deg, #16213e, #0f3460);
+}
+
+.ticker-label {
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 13px;
+  background: rgba(255,215,0,0.2);
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,215,0,0.4);
+  flex-shrink: 0;
+}
+
+.ticker-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #f1f1f1;
+  animation: tickerScroll 25s linear infinite;
+}
+
+.ticker-bar:hover .ticker-content {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* ───────── HERO ───────── */
 .hero {
   height: 90vh;
