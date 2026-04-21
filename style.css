@@ -24,7 +24,7 @@ header {
 
 /* ✅ LOGO */
 .logo-img {
-  height: 60px;
+  height: 90px;
   object-fit: contain;
   display: block;
   margin: 0 auto 8px;
@@ -249,8 +249,8 @@ nav a:hover {
 .road-line:nth-child(3) { animation-delay: -0.66s; }
 
 @keyframes roadMove {
-  from { transform: translateX(300px); }
-  to   { transform: translateX(-300px); }
+  from { transform: translateX(-300px); }
+  to   { transform: translateX(300px); }
 }
 
 /* ── CAR ── */
@@ -264,8 +264,8 @@ nav a:hover {
 }
 
 @keyframes carDrive {
-  0%   { left: -80px; }
-  100% { left: 110%; }
+  0%   { right: -80px; }
+  100% { right: 110%; }
 }
 
 /* ── HERO CONTENT ── */
