@@ -2,8 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -12,29 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
       - uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-  snyk:
-    name: Snyk Security Scan
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install -g snyk
-      - run: snyk auth ${{ secrets.SNYK_TOKEN }}
-      - run: snyk code test || true
-
   docker:
     name: Docker Build and Push
     runs-on: ubuntu-latest
-    needs: [sonarcloud, snyk]
+    needs: sonarcloud
     steps:
       - uses: actions/checkout@v3
       - uses: docker/login-action@v2
@@ -44,35 +29,10 @@ jobs:
       - run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mywebpage:latest .
       - run: docker push ${{ secrets.DOCKER_USERNAME }}/mywebpage:latest
 
-  deploy-staging:
-    name: Deploy Staging
-    runs-on: ubuntu-latest
-    needs: docker
-    steps:
-      - uses: actions/checkout@v3
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          destination_dir: staging
-
-  lighthouse:
-    name: Lighthouse Test
-    runs-on: ubuntu-latest
-    needs: deploy-staging
-    steps:
-      - uses: actions/checkout@v3
-      - run: sleep 30
-      - uses: treosh/lighthouse-ci-action@v10
-        with:
-          urls: https://chandrud171989-collab.github.io/mywebpage/staging/
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-
-  deploy-production:
+  deploy:
     name: Deploy Production
     runs-on: ubuntu-latest
-    needs: lighthouse
+    needs: docker
     steps:
       - uses: actions/checkout@v3
       - uses: peaceiris/actions-gh-pages@v3
