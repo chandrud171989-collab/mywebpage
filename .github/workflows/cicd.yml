@@ -49,7 +49,7 @@ jobs:
       - run: sleep 30
       - uses: treosh/lighthouse-ci-action@v10
         with:
-          urls: https://chandrud171989-collab.github.io/mywebpage/staging/
+          urls: https://chandrud171989-collab.github.io/mywebpage/
           uploadArtifacts: true
           temporaryPublicStorage: true
   deploy-production:
