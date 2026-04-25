@@ -21,6 +21,12 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      - name: Sonar Quality Gate
+        uses: SonarSource/sonarqube-quality-gate-action@v1
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
   docker:
     name: Docker Build & Push
     runs-on: ubuntu-latest
@@ -34,11 +40,15 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Set image tag
+        id: vars
+        run: echo "TAG=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+
       - name: Build Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mywebpage:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mywebpage:${{ steps.vars.outputs.TAG }} .
 
       - name: Push Image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/mywebpage:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/mywebpage:${{ steps.vars.outputs.TAG }}
 
   deploy-staging:
     name: Deploy to Staging
