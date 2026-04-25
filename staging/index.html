@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Best Acting Drivers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <img src="logo.png" alt="Best Acting Drivers Logo" class="logo-img"
+         onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'">
+    <h1 id="logo-text" style="display:none;">Best Acting Drivers</h1>
+  </div>
+  <nav>
+    <div class="nav-left">
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('about')">About</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="#" onclick="showSection('career')">Careers</a>
+    </div>
+  </nav>
+</header>
+
+<!-- SCROLLING TERMS TICKER -->
+<div class="ticker-bar" onclick="openModal()">
+  <span class="ticker-label">📋 T&C:</span>
+  <div class="ticker-wrapper">
+    <div class="ticker-content">
+      <span>🏛️ Currently the service is only from Coimbatore / தற்போது இந்த சேவை கோயம்புத்தூர் பகுதியில் இருந்து மட்டுமே &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+      <span>💸 Upto 4 hours Rs.400, additional Rs.100 per hour / நகருக்குள் 4 மணி நேரத்திற்கு ₹400 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+      <span>💸 12 hours package Rs.1200, more than 12 hours Rs.100 per hour &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+      <span>🛡️ Customer safety is our first priority &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+      <span>📞 Contact 63853 93049 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+      <span>👆 Click here to read full Terms and Conditions &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ TERMS AND CONDITIONS MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h2>📋 Terms and Conditions</h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <h3>1. Service Area</h3>
+      <p>Currently our service is available only from Coimbatore. தற்போது இந்த சேவை கோயம்புத்தூர் பகுதியில் மட்டுமே கிடைக்கும்.</p>
+
+      <h3>2. Pricing</h3>
+      <li>Within Coimbatore: Up to 4 hours ₹400. Additional hours ₹100 per hour.</li>
+      <li>12 hour package ₹1200. Beyond 12 hours ₹100 per additional hour.</li>
+
+      <h3>3. Booking Policy</h3>
+      <p>All bookings must be made through the official website or phone number.</p>
+
+      <h3>4. Cancellation Policy</h3>
+      <p>Cancellations must be made at least 2 hours before the scheduled trip.</p>
+
+      <h3>5. Payment Terms</h3>
+      <p>Payments must be made to the company after the service completion, and do not give any extra charges to the drivers.</p>
+
+      <h3>6. Customer Safety</h3>
+      <p>Our drivers do not engage in rash driving and strictly follow the traffic rules to ensure both customer and driver safety. All drivers are background verified and trained professionally.</p>
+
+      <h3>7. Drivers Conduct</h3>
+      <li>Drivers must report to customer place on time</li>
+      <li>Drivers need to maintain professional behavior, cleanliness, and discipline with customers during travel.</li>
+      <li>Drivers must carry a valid driving licence at all times. Any misconduct should be reported immediately to our support team.</li>
+      <li>Strictly NO ALCOHOL / SMOKING / ANY DRUGS during duty</li>
+      <li>Drivers should not ask customers for extra money</li>
+      <li>No rash driving and strictly follow the traffic rules.</li>
+      <li>No arguments or inappropriate behavior with customers</li>
+      <li>Drivers responsibility is to do the basic checks like Fuel, Lights, and brake before departure from customer place</li>
+
+
+      <h3>8. Customer/Passenger Conduct</h3>
+      <li>Payments must be made to the company after the service completion, and do not give any extra charges to the drivers</li>
+      <li>Customers must treat drivers with respect, drivers are responsible only for driving services</li>
+      <li>Driver is not responsible for any mechanical failures</li>
+      <li>The customer is liable for any legal issues arising from vehicle / vehicle documents during travel</li>
+      <li>Any illegal activities during the travel, service will be terminate immediately without any prior information</li>
+
+
+      <h3>9. Privacy Policy</h3>
+      <p>Your personal information is collected only for service purposes. We do not share your data with any third parties without consent.</p>
+
+      <h3>10. Contact</h3>
+      <p>📧 candb.driver@gmail.com &nbsp;&nbsp; 📞 63853 93049</p>
+
+    </div>
+    <div class="modal-footer">
+      <button class="btn-accept" onclick="closeModal()">✅ I Understand</button>
+    </div>
+  </div>
+</div>
+
+<!-- REFERRAL OFFER BANNER -->
+<div class="offer-banner">
+  <div class="offer-content">
+    <span class="offer-tag">🎉 LIMITED OFFER</span>
+    <p class="offer-text">
+      Refer a friend & get <strong>₹100 OFF</strong> on your next booking!
+      Use code: <span class="offer-code">REFER100</span>
+    </p>
+    <div class="offer-timer">
+      <span>⏳ Offer ends in:</span>
+      <div class="timer-boxes">
+        <div class="timer-box">
+          <span id="days">00</span>
+          <label>Days</label>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-box">
+          <span id="hours">00</span>
+          <label>Hours</label>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-box">
+          <span id="minutes">00</span>
+          <label>Mins</label>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-box">
+          <span id="seconds">00</span>
+          <label>Secs</label>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="offer-btn" onclick="showSection('booking')">
+      Book Now & Save!
+    </a>
+  </div>
+  <button class="offer-close" onclick="this.parentElement.style.display='none'">✕</button>
+</div>
+
+<main>
+
+  <!-- HOME / HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="road">
+      <div class="road-line"></div>
+      <div class="road-line"></div>
+      <div class="road-line"></div>
+    </div>
+    <div class="car-animation">🚗</div>
+    <div class="hero-content">
+      <div class="badge">⭐ Trusted Driver Service Since 2026</div>
+      <h2>Welcome to<br>Best Acting Drivers</h2>
+      <p>Safe &bull; Reliable &bull; Professional Drivers at Your Door Step</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Drivers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Available</span>
+        </div>
+      </div>
+      <a href="#" class="btn blink-btn" onclick="showSection('booking')">
+        🚗 Book a Driver Now
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="display:none;">
+    <div class="section-content">
+      <h2>About Us</h2>
+      <div class="about-cards">
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Safe</h3>
+          <p>All drivers are background verified and trained professionally.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⏰</div>
+          <h3>Reliable</h3>
+          <p>Always on time. Available 24/7 for your convenience.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⭐</div>
+          <h3>Professional</h3>
+          <p>Experienced drivers with excellent customer service.</p>
+        </div>
+      </div>
+      <p class="about-text">Founded in 2026, Best Acting Drivers provides safe and professional driver services across the region. Our drivers are trained, verified, and committed to giving you the best experience.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="display:none;">
+    <div class="section-content">
+      <h2>Contact Us</h2>
+      <div class="contact-box">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div>
+            <strong>Email</strong>
+            <p>candb.driver@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Phone</strong>
+            <p>63853 93049</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🕐</span>
+          <div>
+            <strong>Available</strong>
+            <p>24 Hours / 7 Days</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" style="display:none;">
+    <div class="section-content">
+      <h2>Book a Driver</h2>
+      <p>Fill the form below to book our service!</p>
+      <div class="form-wrapper">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSf7PKaOJlQGLuNNJN70Kkj2Gre1pkR5pHs290smRG8u6AfNqQ/viewform?embedded=true"
+          width="100%" height="700" frameborder="0">
+          Loading form...
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  <section id="career" style="display:none;">
+    <div class="section-content">
+      <h2>Join Our Team</h2>
+      <p>Select a role below:</p>
+
+      <div class="job-list">
+        <button class="job-btn" onclick="openJob('driver')">🚗 Driver</button>
+        <button class="job-btn" onclick="openJob('office')">🏢 Office Staff / Telecaller</button>
+        <button class="job-btn" onclick="openJob('hr')">👔 HR Executive</button>
+      </div>
+
+      <!-- DRIVER FORM -->
+      <div id="driver" class="job-form" style="display:none;">
+        <h3>Driver Application Form</h3>
+        <div class="form-wrapper">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdsbzyR3O4we7SeG4Cn7UCem2m7r_SgButILRvGQXy4AG9CaA/viewform?embedded=true"
+            width="100%" height="700" frameborder="0">
+            Loading form...
+          </iframe>
+        </div>
+      </div>
+
+      <!-- OFFICE FORM -->
+      <div id="office" class="job-form" style="display:none;">
+        <h3>Office Staff / Telecaller Application Form</h3>
+        <div class="form-wrapper">
+          <iframe src="" width="100%" height="700" frameborder="0">
+            Loading form...
+          </iframe>
+        </div>
+      </div>
+
+      <!-- HR EXECUTIVE -->
+      <div id="hr" class="job-form" style="display:none;">
+        <h3>HR Executive</h3>
+        <div class="job-description">
+          <p><strong>📍 Location:</strong> Coimbatore</p>
+          <p><strong>💼 Experience:</strong> 1–3 Years</p>
+
+          <h4>Job Description:</h4>
+          <ul>
+            <li>Manage recruitment and onboarding process</li>
+            <li>Handle employee records and attendance</li>
+            <li>Coordinate with management and staff</li>
+            <li>Maintain HR policies and compliance</li>
+          </ul>
+
+          <h4>Requirements:</h4>
+          <ul>
+            <li>Good communication skills</li>
+            <li>Basic HR knowledge</li>
+            <li>MS Excel / Office skills</li>
+            <li>Any UG/PG degree holders can apply</li>
+          </ul>
+
+          <p><strong>Interested? Send your resume to:</strong></p>
+          <a href="mailto:candb.driver@gmail.com?subject=Application for HR Executive&body=Hi, I am interested in the HR Executive role."
+             class="btn email-btn">
+            📧 Send Your Resume
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <p>🚗 Best Acting Drivers</p>
+    <p>&copy; 2026 All rights reserved.</p>
+    <p class="footer-tc" onclick="openModal()">📋 Terms and Conditions</p>
+  </div>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('main section').forEach(function(sec) {
+      sec.style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function openJob(role) {
+    var el = document.getElementById(role);
+    if (el.style.display === 'block') {
+      el.style.display = 'none';
+    } else {
+      document.querySelectorAll('.job-form').forEach(function(f) {
+        f.style.display = 'none';
+      });
+      el.style.display = 'block';
+    }
+  }
+
+  function openModal() {
+    document.getElementById('modalOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+var offerEndDate = new Date();
+offerEndDate.setDate(offerEndDate.getDate() + 7); /* 7 days from today */
+
+function updateTimer() {
+  var now = new Date();
+  var diff = offerEndDate - now;
+
+  if (diff <= 0) {
+    document.querySelector('.offer-banner').style.display = 'none';
+    return;
+  }
+
+  var days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('days').textContent    = String(days).padStart(2, '0');
+  document.getElementById('hours').textContent   = String(hours).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
