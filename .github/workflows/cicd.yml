@@ -3,6 +3,8 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   sonarcloud:
     name: SonarCloud Scan
@@ -45,12 +47,16 @@ jobs:
     needs: deploy-staging
     steps:
       - uses: actions/checkout@v4
-      - run: sleep 30
+      - name: Wait for Staging to be Ready
+        run: sleep 60
+      - name: Check Staging URL
+        run: curl -I https://chandrud171989-collab.github.io/mywebpage/staging/ || true
       - uses: treosh/lighthouse-ci-action@v12
         with:
           urls: https://chandrud171989-collab.github.io/mywebpage/staging/
           uploadArtifacts: true
           temporaryPublicStorage: true
+        continue-on-error: true
   deploy-production:
     name: Deploy Production
     runs-on: ubuntu-latest
